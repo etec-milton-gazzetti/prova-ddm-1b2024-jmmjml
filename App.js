@@ -289,6 +289,7 @@ const styles = StyleSheet.create({
   },
   partedotexto: {
     paddingHorizontal: 10,
+    backgroundColor: "#fffafa9c",
   },
   texto2: {
     fontWeight: "bold",
