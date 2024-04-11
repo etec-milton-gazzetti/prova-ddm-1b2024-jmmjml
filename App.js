@@ -18,6 +18,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Fotoprincipal from "./assets/foto_trigonometria.png";
 import fundo from "./assets/fundo_trigonometria.png";
 import Minhafoto from "./assets/eu.png";
+import trianguloretangulo from "./assets/trire.png";
+import razoestrigonometricas from "./assets/ratri.png";
+import tabelatrigonometriasimples from "./assets/tabelatrisim.jpg";
+import ciclotrigonometrico from "./assets/ciclotrigo.png";
+import relacaofundamental from "./assets/refun.png";
+import funcoesinversas from "./assets/funin.png";
 
 function HomeScreen({ navigation }) {
   const [loaded] = useFonts({
@@ -38,7 +44,7 @@ function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate("conteudo")}
           style={styles.botao}
         >
-          <Text style={styles.textoBotao}>Conteúdo</Text>
+          <Text style={styles.textoBotao}>Conhecer</Text>
         </TouchableOpacity>
         <StatusBar style="auto" />
       </ImageBackground>
@@ -147,17 +153,25 @@ function Conteudo({ navigation }) {
           <View style={styles.botaolado}>
             <TouchableOpacity
               onPress={() => navigation.goBack()}
-              style={styles.botao}
+              style={styles.botao2}
             >
-              <Text style={styles.textoBotao}>Voltar</Text>
+              <Text style={styles.textoBotao2}>Voltar</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.botaolado}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("formulas")}
+              style={styles.botao2}
+            >
+              <Text style={styles.textoBotao2}>Fórmulas</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.botaolado}>
             <TouchableOpacity
               onPress={() => navigation.navigate("sobre")}
-              style={styles.botao}
+              style={styles.botao2}
             >
-              <Text style={styles.textoBotao}>Sobre</Text>
+              <Text style={styles.textoBotao2}>Sobre</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -179,11 +193,13 @@ function Sobre({ navigation }) {
     <View style={styles.container}>
       <ImageBackground source={fundo} style={styles.Fundo}>
         <Image source={Minhafoto} style={styles.imagem2} />
-          <Text style={styles.Textosobre}>José Miguel Gomes de Oliveira</Text>
-          <Text style={styles.Textosobre}>RM: 07684</Text>
-          <Text style={styles.Textosobre}>jose.oliveira652@etec.sp.gov.br</Text>
-          <Text style={styles.Textosobre}>Curso: MTEC - Informática para Internet</Text>
-          <Text style={styles.Textosobre}>Whatsapp: (18) 99696-7897</Text>
+        <Text style={styles.Textosobre}>José Miguel Gomes de Oliveira</Text>
+        <Text style={styles.Textosobre}>RM: 07684</Text>
+        <Text style={styles.Textosobre}>jose.oliveira652@etec.sp.gov.br</Text>
+        <Text style={styles.Textosobre}>
+          Curso: MTEC - Informática para Internet
+        </Text>
+        <Text style={styles.Textosobre}>Whatsapp: (18) 99696-7897</Text>
         <View style={styles.botoesladoalado}>
           <View style={styles.botaolado}>
             <TouchableOpacity
@@ -199,6 +215,116 @@ function Sobre({ navigation }) {
               style={styles.botao}
             >
               <Text style={styles.textoBotao}>Início</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
+  );
+}
+
+function Formulas({ navigation }) {
+  const [loaded] = useFonts({
+    MulishR: require("./assets/fonts/Mulish/Regular.ttf"),
+    MulishEB: require("./assets/fonts/Mulish/Mulish-ExtraBold.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={fundo} style={styles.Fundo}>
+        <Text style={styles.titulo2}>Fórmulas da Trigonometria</Text>
+        <ScrollView style={styles.partedotexto2}>
+          <Text style={styles.textoformulas}>
+            Nesta parte do trabalho listarei até aonde aprendemos sobre a
+            trigonometria e suas fórmulas. {"\n\n"}Para iniciarmos a parte de
+            fórmulas, temos que entender que as bases da trigonometria vem dos
+            triângulos.
+          </Text>
+          <Image
+            source={trianguloretangulo}
+            style={{
+              borderRadius: 9,
+              height: 150,
+              width: 300,
+              marginHorizontal: "auto",
+            }}
+          />
+          <Text style={styles.textoformulas}>
+            Assim podemos iniciar as fórmulas.
+          </Text>
+          <Image
+            source={razoestrigonometricas}
+            style={{
+              borderRadius: 9,
+              height: 200,
+              width: 350,
+              marginHorizontal: "auto",
+            }}
+          />
+          <Text style={styles.textoformulas}>
+            Aqui são as fórmulas do seno, do cosseno e da tangente.
+          </Text>
+          <Image
+            source={tabelatrigonometriasimples}
+            style={{
+              borderRadius: 9,
+              height: 210,
+              width: 280,
+              marginHorizontal: "auto",
+            }}
+          />
+          <Text style={styles.textoformulas}>
+            Esta é a nossa tabela principal, sempre voltaremos nela para
+            resolver os problemas de trigonometria.
+          </Text>
+          <Image
+            source={ciclotrigonometrico}
+            style={{
+              borderRadius: 900,
+              height: 290,
+              width: 290,
+              marginHorizontal: "auto",
+            }}
+          />
+          <Text style={styles.textoformulas}>
+            O ciclo trigonométrico é essencial para descobrir os ângulos que não
+            temos na nossa tabela comum.
+          </Text>
+          <Image
+            source={relacaofundamental}
+            style={{ marginHorizontal: "auto" }}
+          />
+          <Text style={styles.textoformulas}>
+            Em certas equações iremos precisar procurar o seno ou cosseno tendo
+            somente um deles, esta relação fundamental torna possível encontrar
+            o valor.
+          </Text>
+          <Image
+            source={funcoesinversas}
+            style={{ marginHorizontal: "auto" }}
+          />
+          <Text style={styles.textoformulas}>
+            Funções que podem ser pedidas em vestibulares.
+          </Text>
+        </ScrollView>
+        <View style={styles.botoesladoalado}>
+          <View style={styles.botaolado}>
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.botao}
+            >
+              <Text style={styles.textoBotao}>Voltar</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.botaolado}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("sobre")}
+              style={styles.botao}
+            >
+              <Text style={styles.textoBotao}>Sobre</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -225,6 +351,11 @@ export default function App() {
         <Stack.Screen
           name="sobre"
           component={Sobre}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="formulas"
+          component={Formulas}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
@@ -310,19 +441,41 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 5,
   },
-  imagem2:{
+  imagem2: {
     width: 300,
     height: 300,
-    borderRadius:40,
+    borderRadius: 40,
     marginVertical: 30,
-
   },
-  Textosobre:{
-    fontFamily:"MulishR",
+  Textosobre: {
+    fontFamily: "MulishR",
     fontSize: 21,
     fontWeight: "bold",
     paddingVertical: 10,
     alignItems: "center",
-    textAlign: 'center',
+    textAlign: "center",
+  },
+  partedotexto2: {
+    paddingHorizontal: 10,
+    backgroundColor: "#fffafa9c",
+  },
+  textoformulas: {
+    fontFamily: "MulishR",
+    textAlign: "justify",
+    paddingVertical: 10,
+  },
+  botao2: {
+    backgroundColor: "#7EBCE6",
+    height: 40,
+    width: 100,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  textoBotao2: {
+    fontFamily: "MulishR",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
   },
 });
