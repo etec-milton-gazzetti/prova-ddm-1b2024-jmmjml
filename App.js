@@ -250,6 +250,7 @@ function Formulas({ navigation }) {
               height: 150,
               width: 300,
               marginHorizontal: "auto",
+              alignSelf: "center"
             }}
           />
           <Text style={styles.textoformulas}>
@@ -262,6 +263,7 @@ function Formulas({ navigation }) {
               height: 200,
               width: 350,
               marginHorizontal: "auto",
+              alignSelf: "center"
             }}
           />
           <Text style={styles.textoformulas}>
@@ -274,6 +276,7 @@ function Formulas({ navigation }) {
               height: 210,
               width: 280,
               marginHorizontal: "auto",
+              alignSelf: "center"
             }}
           />
           <Text style={styles.textoformulas}>
@@ -287,6 +290,7 @@ function Formulas({ navigation }) {
               height: 290,
               width: 290,
               marginHorizontal: "auto",
+              alignSelf: "center"
             }}
           />
           <Text style={styles.textoformulas}>
@@ -295,7 +299,7 @@ function Formulas({ navigation }) {
           </Text>
           <Image
             source={relacaofundamental}
-            style={{ marginHorizontal: "auto" }}
+            style={{ marginHorizontal: "auto", alignSelf: "center" }}
           />
           <Text style={styles.textoformulas}>
             Em certas equações iremos precisar procurar o seno ou cosseno tendo
@@ -304,7 +308,7 @@ function Formulas({ navigation }) {
           </Text>
           <Image
             source={funcoesinversas}
-            style={{ marginHorizontal: "auto" }}
+            style={{ marginHorizontal: "auto", alignSelf: "center" }}
           />
           <Text style={styles.textoformulas}>
             Funções que podem ser pedidas em vestibulares.
